@@ -6,38 +6,32 @@ import {
 
 const initialState = {
     loading: false,
-    token: "",
+    posts: [],
     errorMessage: "",
-    isRegistred: Cookies.get("token") ? true : false
 };
 
-const authenticateReducer = (state = initialState, action) => {
+export const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_REQUEST:
             return {
                 ...state,
                 loading: true,
-                    isRegistred: false
             };
         case FETCH_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                    token: action.token.jwt,
+                    posts: action.posts,
                     errorMessage: "",
-                    isRegistred: true
             };
         case FETCH_FAILURE:
             return {
                 ...state,
                 loading: false,
-                    token: "",
+                    posts: [],
                     errorMessage: action.error,
-                    isRegistred: false
             };
         default:
             return state;
     }
 };
-
-export default authenticateReducer;
