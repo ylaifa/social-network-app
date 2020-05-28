@@ -24,6 +24,7 @@ export const Authenticate = (username, email, password) => {
       .then(response => response.json())
       .then(response => {
         if (response) {
+          console.log(response);
           dispatch(fetchSuccess(response));
           Cookies.set("token", response.jwt);
         } else {
