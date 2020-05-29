@@ -34,10 +34,10 @@ const Profile = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetchModif(userEdit);
+    fetchEdit(userEdit);
   };
 
-  const fetchModif = userEdit => {
+  const fetchEdit = userEdit => {
     fetch(`https://api-minireseausocial.mathis-dyk.fr/users/${user.id}`, {
       method: "put",
       headers: {
@@ -83,7 +83,7 @@ const Profile = () => {
           </form>
           <h2>My posts</h2>
           <Post
-            url={`https://api-minireseausocial.mathis-dyk.fr/posts?user.id=${user.id}&_sort=created_at:desc`}
+            URL={`https://api-minireseausocial.mathis-dyk.fr/posts?user.id=${user.id}&_sort=created_at:desc`}
           />
         </>
       ) : (
