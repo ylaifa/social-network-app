@@ -10,7 +10,7 @@ const Home = () => {
         to create a small social media website.
       </p>
       <h3>
-        <Post URL="https://api-minireseausocial.mathis-dyk.fr/posts" />
+        <Post URL="https://api-minireseausocial.mathis-dyk.fr/posts?_limit=5000&_sort=created_at:desc" />
       </h3>
     </>
   );
